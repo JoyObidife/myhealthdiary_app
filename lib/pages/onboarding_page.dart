@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'signup_page.dart';   
 
 class OnboardingPage extends StatelessWidget {
   const OnboardingPage({super.key});
@@ -15,9 +16,9 @@ class OnboardingPage extends StatelessWidget {
           
           children: [
             Icon(Icons.favorite, size: 90, color: Colors.white),
-        
+
             SizedBox(height: 20),
-        
+
             Text(
               "MyHealthDiary",
               style: TextStyle(
@@ -26,7 +27,9 @@ class OnboardingPage extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 20,),
+
+            SizedBox(height: 20),
+
             Text(
               "For Sickle Cell Support",
               style: TextStyle(
@@ -34,6 +37,20 @@ class OnboardingPage extends StatelessWidget {
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
+            ),
+
+            SizedBox(height: 40),
+
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SignupPage(),
+                  ),
+                );
+              },
+              child: Text("Get Started"),
             ),
           ],
         ),
