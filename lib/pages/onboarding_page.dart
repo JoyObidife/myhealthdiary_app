@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'signup_page.dart';   
+import 'login_page.dart';   
 
 class OnboardingPage extends StatelessWidget {
   const OnboardingPage({super.key});
@@ -46,7 +46,7 @@ class OnboardingPage extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => SignupPage(),
+                    builder: (context) => LoginPage(),
                   ),
                 );
               },
