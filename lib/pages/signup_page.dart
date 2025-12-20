@@ -1,0 +1,48 @@
+import 'package:flutter/material.dart';
+import 'package:myhealthdiary_app/widget/custom_textfield.dart';
+import 'package:myhealthdiary_app/widget/password_textfield.dart';
+
+class SignupPage extends StatefulWidget {
+  const SignupPage({super.key});
+
+  @override
+  State<SignupPage> createState() => _SignupPageState();
+}
+
+class _SignupPageState extends State<SignupPage> {
+   var emailController = TextEditingController();
+  var passwordController = TextEditingController();
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+
+          children: [
+            SizedBox(height: 40),
+            Icon(Icons.health_and_safety, color: Colors.blue, size: 80),
+
+            SizedBox(height: 10),
+            Text("MyHealthDiary", style: TextStyle(fontSize: 20)),
+
+            SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text(
+                "Because your health story matters!, signup to continue",
+                style: TextStyle(fontSize: 15, color: Colors.grey),
+              ),
+            ),
+            CustomTextField(label: "email", controller: emailController),
+            SizedBox(height: 16),
+            PasswordTextfield(controller: passwordController),
+          ],
+        ),
+      ),
+    );
+  }
+  
+
+}
