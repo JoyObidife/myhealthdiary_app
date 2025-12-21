@@ -64,7 +64,7 @@ class LoginPage extends StatelessWidget {
                   style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
                   child: Text(
                     "Login",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold,color: Colors.white),
+                    style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold,color: Colors.white),
                     
                   ),
                 ),
@@ -85,7 +85,7 @@ class LoginPage extends StatelessWidget {
                   style: ElevatedButton.styleFrom(backgroundColor: Colors.grey[300]),
                   child: Text(
                     "Sign Up",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black),
+                    style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.black),
                   ),
                 ),
               ),

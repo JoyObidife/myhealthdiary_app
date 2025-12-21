@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myhealthdiary_app/pages/home_page.dart';
 import 'package:myhealthdiary_app/widget/custom_textfield.dart';
 import 'package:myhealthdiary_app/widget/password_textfield.dart';
 
@@ -10,7 +11,7 @@ class SignupPage extends StatefulWidget {
 }
 
 class _SignupPageState extends State<SignupPage> {
-   var emailController = TextEditingController();
+  var emailController = TextEditingController();
   var passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -38,11 +39,37 @@ class _SignupPageState extends State<SignupPage> {
             CustomTextField(label: "email", controller: emailController),
             SizedBox(height: 16),
             PasswordTextfield(controller: passwordController),
+
+            SizedBox(height: 30),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => HomePage()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 12),
+                    child: Text(
+                      "Sign Up",
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
     );
   }
-  
-
 }
