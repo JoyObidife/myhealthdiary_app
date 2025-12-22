@@ -36,7 +36,7 @@ class _SignupPageState extends State<SignupPage> {
                 style: TextStyle(fontSize: 15, color: Colors.grey),
               ),
             ),
-            CustomTextField(label: "email", controller: emailController),
+            CustomTextField(label: "Email", controller: emailController),
             SizedBox(height: 16),
             PasswordTextfield(controller: passwordController),
 
