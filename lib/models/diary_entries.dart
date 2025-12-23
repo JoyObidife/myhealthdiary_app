@@ -5,7 +5,7 @@ class DiaryEntries {
   final List<String> symptoms;
   final List<String> hydrationLevel;
   final String date;
-  final DateTime mood;
+  final String mood;
   final List<String> painLevels;
 
   DiaryEntries({
