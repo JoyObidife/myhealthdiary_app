@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myhealthdiary_app/widget/selection_grid_item.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -11,7 +12,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade200,
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -51,11 +52,15 @@ class _HomePageState extends State<HomePage> {
                 "Today's Overview",
                 style: TextStyle(fontSize: 15, fontWeight: FontWeight.w300),
               ),
+               SizedBox(height: 16),
+               SelectionGridItem(),
             ],
           ),
          
         ),
+        
       ),
     );
   }
 }
+
