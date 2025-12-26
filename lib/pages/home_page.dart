@@ -12,7 +12,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.grey.shade400,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -52,15 +52,63 @@ class _HomePageState extends State<HomePage> {
                 "Today's Overview",
                 style: TextStyle(fontSize: 15, fontWeight: FontWeight.w300),
               ),
-               SizedBox(height: 16),
-               SelectionGridItem(),
+              SizedBox(height: 16),
+              SelectionGridItem(),
+
+              SizedBox(height: 18),
+              Text(
+                "Quick Actions",
+                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w300),
+              ),
+              SizedBox(height: 10),
+              Column(
+                children: [
+                  Container(
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: GestureDetector(
+                      onTap: () {},
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                          left: 16,
+                          top: 12,
+                          bottom: 12,
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Column(
+                              children: [
+                                CircleAvatar(
+                                  radius: 15, // adjust size as needed
+                                  backgroundColor: Colors.grey.shade200,
+                                  child: Icon(
+                                    Icons.monitor_heart,
+                                    color: Colors.blue,
+                                    size: 28,
+                                  ),
+                                ),
+                                SizedBox(height: 8),
+                                Text(
+                                  "Log Symptom",
+                                  style: TextStyle(fontSize: 15),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
-         
         ),
-        
       ),
     );
   }
 }
-

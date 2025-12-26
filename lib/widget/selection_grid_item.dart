@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class SelectionGridItem extends StatelessWidget {
@@ -34,7 +33,7 @@ class SelectionGridItem extends StatelessWidget {
         crossAxisCount: 3,
         crossAxisSpacing: 12,
         mainAxisSpacing: 12,
-        childAspectRatio: 1.5
+        childAspectRatio: 1.5,
       ),
       itemCount: gridItems.length,
       itemBuilder: (context, index) {
@@ -60,11 +59,17 @@ class SelectionGridItem extends StatelessWidget {
               const SizedBox(height: 6),
               Text(
                 item.title,
-                style: const TextStyle(color: Colors.grey, fontWeight: FontWeight.w600),
+                style: const TextStyle(
+                  color: Colors.grey,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
               Text(
                 item.value,
-                style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+                style: const TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ],
           ),
@@ -73,15 +78,17 @@ class SelectionGridItem extends StatelessWidget {
     );
   }
 }
+
 class GridItem {
   final String title;
   final IconData icon;
-  final  Color color;
+  final Color color;
   final String value;
 
   GridItem({
     required this.title,
     required this.icon,
-    required this.value, required this.color,
+    required this.value,
+    required this.color,
   });
 }
