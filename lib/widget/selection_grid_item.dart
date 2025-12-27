@@ -31,9 +31,9 @@ class SelectionGridItem extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 3,
-        crossAxisSpacing: 12,
-        mainAxisSpacing: 12,
-        childAspectRatio: 1.5,
+        crossAxisSpacing: 11,
+        mainAxisSpacing: 11,
+        childAspectRatio: 1.1,
       ),
       itemCount: gridItems.length,
       itemBuilder: (context, index) {
@@ -56,17 +56,20 @@ class SelectionGridItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(item.icon, color: item.color, size: 30),
-              const SizedBox(height: 6),
+              SizedBox(height: 6),
               Text(
                 item.title,
-                style: const TextStyle(
+                maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.center,
+                style:  TextStyle(
                   color: Colors.grey,
                   fontWeight: FontWeight.w600,
                 ),
               ),
               Text(
                 item.value,
-                style: const TextStyle(
+                style:  TextStyle(
                   fontSize: 12,
                   fontWeight: FontWeight.bold,
                 ),

@@ -52,7 +52,7 @@ class _HomePageState extends State<HomePage> {
                 "Today's Overview",
                 style: TextStyle(fontSize: 15, fontWeight: FontWeight.w300),
               ),
-              SizedBox(height: 16),
+              //SizedBox(height: 5),
               SelectionGridItem(),
 
               SizedBox(height: 18),
@@ -140,7 +140,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Container _buildCardView({
+  Widget _buildCardView({
   required IconData icon,
   required String title,
   String? subtitle,
@@ -171,7 +171,7 @@ class _HomePageState extends State<HomePage> {
               children: [
                 Text(
                   title,
-                  style: const TextStyle(fontSize: 16, color: Colors.black),
+                  style: TextStyle(fontSize: 16, color: Colors.black),
                 ),
                 if (subtitle != null)
                   Text(

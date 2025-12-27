@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myhealthdiary_app/navigationbar/bottom_nativagation_page.dart';
 import 'package:myhealthdiary_app/pages/onboarding_page.dart';
 
 void main() {
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       ),
       
       debugShowCheckedModeBanner: false,
-      home: const OnboardingPage(),
+      home: BottomNavigation(),
     );
   }
 }
