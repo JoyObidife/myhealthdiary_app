@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:myhealthdiary_app/pages/home_page.dart';
 import 'package:myhealthdiary_app/pages/medications_page.dart';
@@ -13,7 +12,7 @@ class BottomNavigation extends StatefulWidget {
 }
 
 class _BottomNavigationState extends State<BottomNavigation> {
-  int indexToBeShown = 1;
+  int indexToBeShown = 0;
 
   var pages = [HomePage(), SymptomsPage(), MedicationsPage(), ProfilePage()];
   @override
@@ -22,20 +21,34 @@ class _BottomNavigationState extends State<BottomNavigation> {
       body: pages[indexToBeShown],
 
       bottomNavigationBar: BottomNavigationBar(
+         backgroundColor: Colors.blue.shade50,
         currentIndex: indexToBeShown,
+        selectedItemColor: Colors.blue,   
+      unselectedItemColor: Colors.grey,   
         onTap: (value) {
           setState(() {
             indexToBeShown = value;
-        
-            
           });
- },
+        },
         items: [
-          BottomNavigationBarItem(label: "Home", icon: Icon(Icons.home)),
-          BottomNavigationBarItem(label: "Symptoms", icon: Icon(Icons.warning)), 
-          BottomNavigationBarItem(label: "Medications", icon: Icon(Icons.medication)),
-          BottomNavigationBarItem(label: "Profile", icon: Icon(Icons.person)),
-          ],
+          BottomNavigationBarItem(
+            backgroundColor: Colors.grey.shade100,
+            label: "Home",
+            icon: Icon(Icons.home, color: Colors.blue),
+          ),
+          BottomNavigationBarItem(
+            label: "Symptoms",
+            icon: Icon(Icons.monitor_heart, color: Colors.blue),
+          ),
+          BottomNavigationBarItem(
+            label: "Medications",
+            icon: Icon(Icons.medication, color: Colors.blue),
+          ),
+          BottomNavigationBarItem(
+            label: "Profile",
+            icon: Icon(Icons.person, color: Colors.blue),
+          ),
+        ],
       ),
     );
   }

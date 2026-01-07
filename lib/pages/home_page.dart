@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
               SizedBox(height: 16),
               Text(
                 "Today's Overview",
-                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w300),
+                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
               ),
               //SizedBox(height: 5),
               SelectionGridItem(),
@@ -58,7 +58,7 @@ class _HomePageState extends State<HomePage> {
               SizedBox(height: 18),
               Text(
                 "Quick Actions",
-                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w300),
+                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 10),
               Column(
@@ -100,7 +100,7 @@ class _HomePageState extends State<HomePage> {
 
                SizedBox(height: 16),
               Text(
-                "Upcomping Events",
+                "Upcoming Events",
                 style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
               ),
 
@@ -146,8 +146,10 @@ class _HomePageState extends State<HomePage> {
   String? subtitle,
   required VoidCallback onTap,
   required Color color, // icon color
+  //double height = 180,
 }) {
   return Container(
+   //height: height,
     width: double.infinity,
     decoration: BoxDecoration(
       color: Colors.white,
