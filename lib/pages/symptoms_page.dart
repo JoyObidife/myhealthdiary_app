@@ -41,7 +41,7 @@ class _SymptomsPageState extends State<SymptomsPage> {
                     SizedBox(height: 8),
                     Text(
                       "Track your daily symptoms",
-                      style: TextStyle(fontSize: 16, color: Colors.white),
+                      style: TextStyle(fontSize: 16, color: Colors.white.withOpacity(0.8)),
                     ),
                   ],
                 ),
@@ -60,7 +60,10 @@ class _SymptomsPageState extends State<SymptomsPage> {
                       SizedBox(width: 8),
                       Text(
                         "Log New Symptom",
-                        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ],
                   ),
@@ -93,7 +96,11 @@ class _SymptomsPageState extends State<SymptomsPage> {
                             CircleAvatar(
                               radius: 20,
                               backgroundColor: Colors.grey.shade200,
-                              child: Icon(Icons.monitor_heart, color: Colors.blue, size: 28),
+                              child: Icon(
+                                Icons.monitor_heart,
+                                color: Colors.blue,
+                                size: 28,
+                              ),
                             ),
                             SizedBox(width: 16),
                             Column(
@@ -101,11 +108,17 @@ class _SymptomsPageState extends State<SymptomsPage> {
                               children: [
                                 Text(
                                   "Fatigue",
-                                  style: TextStyle(fontSize: 16, color: Colors.black),
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.black,
+                                  ),
                                 ),
                                 Text(
-                                  "Nov 13, 2025",
-                                  style: TextStyle(fontSize: 14, color: Colors.grey.shade600),
+                                  "Nov 8, 2025",
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    color: Colors.grey.shade600,
+                                  ),
                                 ),
                               ],
                             ),
@@ -117,33 +130,283 @@ class _SymptomsPageState extends State<SymptomsPage> {
                             ElevatedButton(
                               onPressed: () {},
                               style: ElevatedButton.styleFrom(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 8,
+                                  vertical: 4,
+                                ),
                                 backgroundColor: Colors.grey.shade300,
                                 foregroundColor: Colors.blue,
                                 elevation: 0,
-                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
                               ),
-                              child: Text("Moderate"),
+                              child: Text(
+                                "Moderate",
+                                style: TextStyle(fontSize: 12),
+                              ),
                             ),
-                            SizedBox(width: 8,),
-                            Text("Pain: 5/10", style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),),
+                            SizedBox(width: 8),
+                            Text(
+                              "Pain: 5/10",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  
+                  SizedBox(height: 10),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            CircleAvatar(
+                              radius: 20,
+                              backgroundColor: Colors.grey.shade200,
+                              child: Icon(
+                                Icons.monitor_heart,
+                                color: Colors.blue,
+                                size: 28,
+                              ),
+                            ),
+                            SizedBox(width: 16),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Joint Pain",
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                                Text(
+                                  "Nov 11, 2025",
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    color: Colors.grey.shade600,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 12),
+                        Row(
+                          children: [
+                            ElevatedButton(
+                              onPressed: () {},
+                              style: ElevatedButton.styleFrom(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 8,
+                                  vertical: 4,
+                                ),
+                                backgroundColor: Colors.red,
+                                foregroundColor: Colors.red,
+                                elevation: 0,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                              ),
+                              child: Text(
+                                "Severe",
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                            SizedBox(width: 8),
+                            Text(
+                              "Pain: 7/10",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                           ],
                         ),
                       ],
                     ),
                   ),
                   SizedBox(height: 10),
-                  buildCardView(
-                    height: 120,
-                    icon: Icons.add,
-                    title: "Add Medication",
-                    color: Colors.green,
-                    onTap: () {},
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            CircleAvatar(
+                              radius: 20,
+                              backgroundColor: Colors.grey.shade200,
+                              child: Icon(
+                                Icons.monitor_heart,
+                                color: Colors.blue,
+                                size: 28,
+                              ),
+                            ),
+                            SizedBox(width: 16),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Headache",
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                                Text(
+                                  "Nov 12, 2025",
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    color: Colors.grey.shade600,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 12),
+                        Row(
+                          children: [
+                            ElevatedButton(
+                              onPressed: () {},
+                              style: ElevatedButton.styleFrom(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 8,
+                                  vertical: 4,
+                                ),
+                                backgroundColor: Colors.grey.shade300,
+                                foregroundColor: Colors.blue,
+                                elevation: 0,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                              ),
+                              child: Text(
+                                "Mild",
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.green,
+                                ),
+                              ),
+                            ),
+                            SizedBox(width: 8),
+                            Text(
+                              "Pain: 3/10",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 12),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            CircleAvatar(
+                              radius: 20,
+                              backgroundColor: Colors.grey.shade200,
+                              child: Icon(
+                                Icons.monitor_heart,
+                                color: Colors.blue,
+                                size: 28,
+                              ),
+                            ),
+                            SizedBox(width: 16),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Chest Pain",
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                                Text(
+                                  "Nov 15, 2025",
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    color: Colors.grey.shade600,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 12),
+                        Row(
+                          children: [
+                            ElevatedButton(
+                              onPressed: () {},
+                              style: ElevatedButton.styleFrom(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 8,
+                                  vertical: 4,
+                                ),
+                                backgroundColor: Colors.grey.shade300,
+                                foregroundColor: Colors.blue,
+                                elevation: 0,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                              ),
+                              child: Text(
+                                "Moderate",
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.blue,
+                                ),
+                              ),
+                            ),
+                            SizedBox(width: 8),
+                            Text(
+                              "Pain: 6/10",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
             ],
           ),
-          
         ),
       ),
     );
