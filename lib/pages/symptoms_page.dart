@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myhealthdiary_app/widget/card_view.dart';
 
 class SymptomsPage extends StatefulWidget {
   const SymptomsPage({super.key});
@@ -59,7 +60,7 @@ class _SymptomsPageState extends State<SymptomsPage> {
                       SizedBox(width: 8),
                       Text(
                         "Log New Symptom",
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                       ),
                     ],
                   ),
@@ -78,83 +79,73 @@ class _SymptomsPageState extends State<SymptomsPage> {
               SizedBox(height: 16),
               Column(
                 children: [
-                  _buildCardView(
-                    icon: Icons.monitor_heart,
-                    color: Colors.blue,
-                    title: "Fatigue",
-                    subtitle: "Nov 13, 2025",
-                    onTap: () {},
-                  ),
-                  SizedBox(height: 8),
-                  Row(
-                    children: [
-                      ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.grey.shade300,
-                          foregroundColor: Colors.blue,
-                          elevation: 0,
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            CircleAvatar(
+                              radius: 20,
+                              backgroundColor: Colors.grey.shade200,
+                              child: Icon(Icons.monitor_heart, color: Colors.blue, size: 28),
+                            ),
+                            SizedBox(width: 16),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Fatigue",
+                                  style: TextStyle(fontSize: 16, color: Colors.black),
+                                ),
+                                Text(
+                                  "Nov 13, 2025",
+                                  style: TextStyle(fontSize: 14, color: Colors.grey.shade600),
+                                ),
+                              ],
+                            ),
+                          ],
                         ),
-                        child: Text("Moderate"),
-                      ),
-                    ],
+                        SizedBox(height: 12),
+                        Row(
+                          children: [
+                            ElevatedButton(
+                              onPressed: () {},
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.grey.shade300,
+                                foregroundColor: Colors.blue,
+                                elevation: 0,
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))
+                              ),
+                              child: Text("Moderate"),
+                            ),
+                            SizedBox(width: 8,),
+                            Text("Pain: 5/10", style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  buildCardView(
+                    height: 120,
+                    icon: Icons.add,
+                    title: "Add Medication",
+                    color: Colors.green,
+                    onTap: () {},
                   ),
                 ],
               ),
             ],
           ),
+          
         ),
       ),
     );
   }
-}
-
-Widget _buildCardView({
-  required IconData icon,
-  required String title,
-  String? subtitle,
-  required VoidCallback onTap,
-  required Color color, // icon color
-  double height = 120,
-}) {
-  return Container(
-    height: height,
-    width: double.infinity,
-    decoration: BoxDecoration(
-      color: Colors.white,
-      borderRadius: BorderRadius.circular(10),
-    ),
-    child: GestureDetector(
-      onTap: onTap,
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-        child: Row(
-          children: [
-            CircleAvatar(
-              radius: 20,
-              backgroundColor: Colors.grey.shade200,
-              child: Icon(icon, color: color, size: 28),
-            ),
-            SizedBox(width: 16),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  title,
-                  style: TextStyle(fontSize: 16, color: Colors.black),
-                ),
-                if (subtitle != null)
-                  Text(
-                    subtitle,
-                    style: TextStyle(fontSize: 14, color: Colors.grey.shade600),
-                  ),
-              ],
-            ),
-          ],
-        ),
-      ),
-    ),
-  );
 }

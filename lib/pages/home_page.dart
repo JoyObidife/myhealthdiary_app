@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myhealthdiary_app/widget/selection_grid_item.dart';
+import 'package:myhealthdiary_app/widget/card_view.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -63,7 +64,7 @@ class _HomePageState extends State<HomePage> {
               SizedBox(height: 10),
               Column(
                 children: [
-                  _buildCardView(
+                  buildCardView(
                     icon: Icons.monitor_heart,
                     color: Colors.blue,
                     title: "Log Symptom",
@@ -73,7 +74,7 @@ class _HomePageState extends State<HomePage> {
               ),
               // Add Medication section
               SizedBox(height: 8),
-              _buildCardView(
+              buildCardView(
                 icon: Icons.add,
                 title: "Add Medication",
                 color: Colors.green,
@@ -82,7 +83,7 @@ class _HomePageState extends State<HomePage> {
 
               // Schedule Appointment Section
               SizedBox(height: 8),
-              _buildCardView(
+              buildCardView(
                 icon: Icons.event,
                 title: "Schedule Appointment",
                 color: Colors.blue,
@@ -91,7 +92,7 @@ class _HomePageState extends State<HomePage> {
 
               // Crisis management section
               SizedBox(height: 8),
-              _buildCardView(
+              buildCardView(
                 icon: Icons.warning,
                 title: "Crisis Management",
                 color: Colors.red,
@@ -106,7 +107,7 @@ class _HomePageState extends State<HomePage> {
 
                // Crisis management section
               SizedBox(height: 8),
-              _buildCardView(
+              buildCardView(
                 icon: Icons.event,
                 title: "Dr Chioma Appointment",
                  subtitle: "Today at 10:00 AM",
@@ -116,7 +117,7 @@ class _HomePageState extends State<HomePage> {
 
                // Therapy section
               SizedBox(height: 8),
-              _buildCardView(
+              buildCardView(
                 icon: Icons.monitor_heart,
                 title: "Therapy Session",
                  subtitle: "Friday, feb 2",
@@ -126,7 +127,7 @@ class _HomePageState extends State<HomePage> {
 
                //  Pain crisis section
               SizedBox(height: 8),
-              _buildCardView(
+              buildCardView(
                 icon: Icons.warning,
                 title: "Pain Crisis",
                  subtitle: "Monday, Jan 28",
@@ -139,56 +140,4 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-
-  Widget _buildCardView({
-  required IconData icon,
-  required String title,
-  String? subtitle,
-  required VoidCallback onTap,
-  required Color color, // icon color
-  //double height = 180,
-}) {
-  return Container(
-   //height: height,
-    width: double.infinity,
-    decoration: BoxDecoration(
-      color: Colors.white,
-      borderRadius: BorderRadius.circular(10),
-    ),
-    child: GestureDetector(
-      onTap: onTap,
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-        child: Row(
-          children: [
-            CircleAvatar(
-              radius: 20,
-              backgroundColor: Colors.grey.shade200,
-              child: Icon(icon, color: color, size: 28),
-            ),
-            SizedBox(width: 16),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  title,
-                  style: TextStyle(fontSize: 16, color: Colors.black),
-                ),
-                if (subtitle != null)
-                  Text(
-                    subtitle,
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.grey.shade600,
-                    ),
-                  ),
-              ],
-            ),
-          ],
-        ),
-      ),
-    ),
-  );
-}
 }
