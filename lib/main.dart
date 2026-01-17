@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:myhealthdiary_app/navigationbar/bottom_nativagation_page.dart';
 import 'package:myhealthdiary_app/pages/onboarding_page.dart';
+import 'package:myhealthdiary_app/pages/log_symptom_page.dart';
+import 'package:myhealthdiary_app/pages/medications_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +23,13 @@ class MyApp extends StatelessWidget {
       ),
       
       debugShowCheckedModeBanner: false,
-      home: BottomNavigation(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const BottomNavigation(),
+        '/log-symptom': (context) => const LogSymptomPage(),
+        '/medications': (context) => const MedicationsPage(),
+      },
+      // home: BottomNavigation(), // Removed in favor of routes
     );
   }
 }

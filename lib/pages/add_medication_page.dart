@@ -41,20 +41,20 @@ class _AddMedicationPageState extends State<AddMedicationPage> {
     return Scaffold(
       backgroundColor: Colors.grey.shade50,
       appBar: AppBar(
-        title: const Text('Add New Medication'),
+        title:  Text('Add New Medication'),
         backgroundColor: Colors.transparent,
         elevation: 0,
-        titleTextStyle: const TextStyle(
-          color: Colors.black87,
-          fontSize: 20,
+        titleTextStyle:  TextStyle(
+          color: Colors.black,
+          fontSize: 18,
           fontWeight: FontWeight.bold,
         ),
-        iconTheme: const IconThemeData(color: Colors.black87),
+        iconTheme:  IconThemeData(color: Colors.black87),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(24.0),
+          padding: EdgeInsets.all(24.0),
           child: Form(
             key: _formKey,
             child: Column(
@@ -74,7 +74,7 @@ class _AddMedicationPageState extends State<AddMedicationPage> {
                     return null;
                   },
                 ),
-                const SizedBox(height: 16),
+                 SizedBox(height: 16),
                 Row(
                   children: [
                     Expanded(
@@ -85,7 +85,7 @@ class _AddMedicationPageState extends State<AddMedicationPage> {
                         icon: Icons.scale_outlined,
                       ),
                     ),
-                    const SizedBox(width: 16),
+                    SizedBox(width: 16),
                     Expanded(
                       child: _buildTextField(
                         controller: _quantityController,
@@ -98,9 +98,9 @@ class _AddMedicationPageState extends State<AddMedicationPage> {
                   ],
                 ),
                 
-                const SizedBox(height: 32),
+                SizedBox(height: 32),
                 _buildSectionLabel('Schedule'),
-                const SizedBox(height: 16),
+                SizedBox(height: 16),
                 
                 // Frequency Dropdown
                 Container(
@@ -131,7 +131,7 @@ class _AddMedicationPageState extends State<AddMedicationPage> {
                   ),
                 ),
                 
-                const SizedBox(height: 16),
+                 SizedBox(height: 16),
                 
                 // Time Picker (only if not PRN)
                 if (_frequency != 'As Needed (PRN)')
@@ -148,13 +148,13 @@ class _AddMedicationPageState extends State<AddMedicationPage> {
                       child: Row(
                         children: [
                           Icon(Icons.access_time_rounded, color: Colors.blue.shade600),
-                          const SizedBox(width: 16),
+                           SizedBox(width: 16),
                           Text(
                             'Time: ${_selectedTime.format(context)}',
-                            style: const TextStyle(fontSize: 16),
+                            style:  TextStyle(fontSize: 16),
                           ),
-                          const Spacer(),
-                          const Icon(Icons.arrow_forward_ios_rounded, size: 16, color: Colors.grey),
+                           Spacer(),
+                           Icon(Icons.arrow_forward_ios_rounded, size: 16, color: Colors.grey),
                         ],
                       ),
                     ),
@@ -165,13 +165,13 @@ class _AddMedicationPageState extends State<AddMedicationPage> {
                 // Save Button
                 SizedBox(
                   width: double.infinity,
-                  height: 56,
+                  height: 48,
                   child: ElevatedButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
                         // For now, just pop back
                         ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('Medication Saved')),
+                           SnackBar(content: Text('Medication Saved')),
                         );
                         Navigator.pop(context);
                       }
@@ -188,7 +188,7 @@ class _AddMedicationPageState extends State<AddMedicationPage> {
                       'Save Medication',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 18,
+                        fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),
                     ),

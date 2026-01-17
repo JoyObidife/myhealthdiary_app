@@ -160,16 +160,17 @@ class MedicationCard extends StatelessWidget {
                 ),
                 const SizedBox(width: 12),
                 Expanded(
-                  child: ElevatedButton(
+                  child: OutlinedButton(
                     onPressed: onTaken,
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white,
+                    style: OutlinedButton.styleFrom(
+                      // backgroundColor: Colors.white, // OutlinedButton doesn't use backgroundColor by default in the same way
                       foregroundColor: Colors.blue,
-                      elevation: 0,
+                      // elevation: 0, // No elevation for OutlinedButton by default
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
-                        side: BorderSide(color: Colors.blue.withOpacity(0.5)),
+                        // side: BorderSide(color: Colors.blue), // OutlinedButton handles border via side property
                       ),
+                      side: const BorderSide(color: Colors.blue),
                       padding: const EdgeInsets.symmetric(vertical: 12),
                     ),
                     child: const Text('Mark Taken'),

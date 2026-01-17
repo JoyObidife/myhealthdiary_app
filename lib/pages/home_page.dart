@@ -68,7 +68,9 @@ class _HomePageState extends State<HomePage> {
                     icon: Icons.monitor_heart,
                     color: Colors.blue,
                     title: "Log Symptom",
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushNamed(context, '/log-symptom');
+                    },
                   ),
                 ],
               ),
@@ -78,7 +80,9 @@ class _HomePageState extends State<HomePage> {
                 icon: Icons.add,
                 title: "Add Medication",
                 color: Colors.green,
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, '/medications');
+                },
               ),
 
               // Schedule Appointment Section

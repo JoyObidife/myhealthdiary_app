@@ -39,15 +39,15 @@ class _MedicationsPageState extends State<MedicationsPage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
+                       Text(
                         'Medications',
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 28,
+                          fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const SizedBox(height: 8),
+                      SizedBox(height: 8),
                       Text(
                         "Manage your medications",
                         style: TextStyle(
@@ -60,12 +60,12 @@ class _MedicationsPageState extends State<MedicationsPage> {
                   ),
                 ),
                 
-                const SizedBox(height: 24),
+                 SizedBox(height: 24),
                 
                 // Add Medication Button
                 SizedBox(
                   width: double.infinity,
-                  height: 56,
+                  height: 48,
                   child: ElevatedButton(
                     onPressed: () {
                     Navigator.push(
@@ -83,11 +83,11 @@ class _MedicationsPageState extends State<MedicationsPage> {
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
+                      children: [
                         Icon(Icons.add_rounded, color: Colors.white, size: 24),
                         SizedBox(width: 8),
                         Text(
-                          "+ Add Medication",
+                          "Add Medication",
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 16,
@@ -99,20 +99,20 @@ class _MedicationsPageState extends State<MedicationsPage> {
                   ),
                 ),
                 
-                const SizedBox(height: 32),
+               SizedBox(height: 32),
                 
                 // Section Title
-                const Text(
+                 Text(
                   "Current Medications",
                   style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.black87,
+                    fontSize: 16,
+                    color: Colors.black,
                     fontWeight: FontWeight.bold,
                     letterSpacing: -0.5,
                   ),
                 ),
                 
-                const SizedBox(height: 16),
+                 SizedBox(height: 16),
                 
                 // Medication List
                 ListView(
