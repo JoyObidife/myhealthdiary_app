@@ -15,6 +15,7 @@ Widget buildCardView({
       color: Colors.white,
       borderRadius: BorderRadius.circular(10),
     ),
+    alignment: Alignment.center, // Ensure content is centered if height is larger
     child: GestureDetector(
       onTap: onTap,
       child: Padding(

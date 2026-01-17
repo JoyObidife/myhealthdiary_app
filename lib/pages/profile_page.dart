@@ -62,15 +62,15 @@ class ProfilePage extends StatelessWidget {
           bottomRight: Radius.circular(30),
         ),
       ),
-      padding: const EdgeInsets.fromLTRB(20, 60, 20, 40), // Adjust top padding for status bar
+      padding: EdgeInsets.fromLTRB(20, 60, 20, 40), // Adjust top padding for status bar
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
+        children:  [
           Text(
             "My Profile",
             style: TextStyle(
               color: Colors.white,
-              fontSize: 28,
+              fontSize: 18,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -101,24 +101,24 @@ class ProfilePage extends StatelessWidget {
           ),
         ],
       ),
-      padding: const EdgeInsets.all(24),
+      padding: EdgeInsets.all(24),
       child: Column(
         children: [
           CircleAvatar(
             radius: 50,
             backgroundColor: Colors.grey.shade400,
           ),
-          const SizedBox(height: 16),
-          const Text(
+           SizedBox(height: 16),
+         Text(
             "Sandra Kelvin",
             style: TextStyle(
-              fontSize: 22,
+              fontSize: 18,
               fontWeight: FontWeight.bold,
               color: Colors.black87,
             ),
           ),
-          const SizedBox(height: 4),
-          const Text(
+          SizedBox(height: 4),
+          Text(
             "28 years old",
             style: TextStyle(
               fontSize: 14,

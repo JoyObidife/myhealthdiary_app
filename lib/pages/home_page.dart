@@ -100,7 +100,9 @@ class _HomePageState extends State<HomePage> {
                 icon: Icons.warning,
                 title: "Crisis Management",
                 color: Colors.red,
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, '/crisis-management');
+                },
               ),
 
                SizedBox(height: 16),
