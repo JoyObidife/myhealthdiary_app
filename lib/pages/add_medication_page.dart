@@ -104,7 +104,7 @@ class _AddMedicationPageState extends State<AddMedicationPage> {
                 
                 // Frequency Dropdown
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                  padding:  EdgeInsets.symmetric(horizontal: 16, vertical: 4),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(16),
@@ -160,7 +160,7 @@ class _AddMedicationPageState extends State<AddMedicationPage> {
                     ),
                   ),
 
-                const SizedBox(height: 48),
+                SizedBox(height: 48),
                 
                 // Save Button
                 SizedBox(
@@ -184,7 +184,7 @@ class _AddMedicationPageState extends State<AddMedicationPage> {
                       elevation: 4,
                       shadowColor: Colors.blue.withOpacity(0.4),
                     ),
-                    child: const Text(
+                    child:  Text(
                       'Save Medication',
                       style: TextStyle(
                         color: Colors.white,
@@ -244,7 +244,7 @@ class _AddMedicationPageState extends State<AddMedicationPage> {
           borderRadius: BorderRadius.circular(16),
           borderSide: BorderSide(color: Colors.blue.shade400, width: 2),
         ),
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+        contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
       ),
     );
   }

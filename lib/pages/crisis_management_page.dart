@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class CrisisManagementPage extends StatelessWidget {
-  const CrisisManagementPage({super.key});
+ const CrisisManagementPage({super.key});
 
   Future<void> _makePhoneCall(String phoneNumber) async {
     final Uri launchUri = Uri(
@@ -30,10 +30,11 @@ class CrisisManagementPage extends StatelessWidget {
           children: [
            
             Container(
-              padding: const EdgeInsets.only(top: 50, left: 20, right: 20, bottom: 20),
-              decoration: const BoxDecoration(
+              width: double.infinity,
+              padding: EdgeInsets.only(top: 50, left: 20, right: 20, bottom: 20),
+              decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [Color(0xFFE86B6B), Color(0xFFFF8A80)], // Red/coral gradient
+                  colors: [Colors.red, Colors.redAccent],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ),
@@ -47,7 +48,7 @@ class CrisisManagementPage extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () => Navigator.pop(context),
-                    child: const Icon(Icons.arrow_back, color: Colors.white),
+                    child: Icon(Icons.arrow_back, color: Colors.white),
                   ),
                    SizedBox(height: 16),
                  Text(
@@ -62,7 +63,7 @@ class CrisisManagementPage extends StatelessWidget {
                   Text(
                     "Immediate help and resources",
                     style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.white.withOpacity(0.6),
                       fontSize: 14,
                     ),
                   ),
@@ -71,43 +72,43 @@ class CrisisManagementPage extends StatelessWidget {
             ),
 
             Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   // 2. Emergency Call Button
                   Container(
                     width: double.infinity,
-                    margin: const EdgeInsets.only(top: 10, bottom: 24),
+                    margin: EdgeInsets.only(top: 10, bottom: 24),
                     child: ElevatedButton(
                       onPressed: () => _makePhoneCall('911'),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor:  Color(0xFFE86B6B), 
+                        backgroundColor: Colors.red, 
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(16),
                         ),
-                        padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 24),
+                        padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
                         elevation: 4,
                       ),
                       child: Row(
                         children: [
                           Container(
-                            padding: const EdgeInsets.all(12),
+                            padding: EdgeInsets.all(8),
                             decoration: BoxDecoration(
                               color: Colors.white.withAlpha(50),
                               shape: BoxShape.circle,
                             ),
-                            child: const Icon(Icons.warning_amber_rounded, color: Colors.white, size: 36),
+                            child: Icon(Icons.warning_amber_rounded, color: Colors.white, size: 28),
                           ),
-                          const SizedBox(width: 20),
+                          SizedBox(width: 16),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
+                            children: [
                               Text(
                                 "Call Emergency Services",
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 20,
+                                  fontSize: 14,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -116,7 +117,7 @@ class CrisisManagementPage extends StatelessWidget {
                                 "Tap to dial 911",
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 16,
+                                  fontSize: 12,
                                 ),
                               ),
                             ],
@@ -127,22 +128,22 @@ class CrisisManagementPage extends StatelessWidget {
                   ),
 
                   // 3. During a Crisis Section
-                  const Text(
+                  Text(
                     "During a Crisis",
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      color: Color(0xFF212121),
+                      color: Colors.black87,
                     ),
                   ),
                    SizedBox(height: 12),
                   GridView.count(
                     crossAxisCount: 2,
                     shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
+                    physics: NeverScrollableScrollPhysics(),
                     mainAxisSpacing: 12,
                     crossAxisSpacing: 12,
-                    childAspectRatio: 1.1,
+                    childAspectRatio: 1.5,
                     children: [
                       _buildActionCard(
                         title: "Hydrate",
@@ -168,28 +169,28 @@ class CrisisManagementPage extends StatelessWidget {
                   ),
 
                   // 4. Emergency Contacts Section
-                  const SizedBox(height: 24),
-                  const Text(
+                  SizedBox(height: 24),
+                  Text(
                     "Emergency Contacts",
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      color: Color(0xFF212121),
+                      color: Colors.black87,
                     ),
                   ),
-                  const SizedBox(height: 12),
+                  SizedBox(height: 12),
                   _buildContactCard("Dr. Sarah Johnson", "Primary Care", "555-0123"),
                   _buildContactCard("Emergency Services", "24/7 Helpline", "555-0199"),
                   _buildContactCard("Mom", "Emergency Contact", "555-0144"),
 
                   // 5. Nearby Hospitals Section
-                  const SizedBox(height: 24),
-                  const Text(
+                  SizedBox(height: 24),
+                  Text(
                     "Nearby Hospitals",
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      color: Color(0xFF212121),
+                      color: Colors.black87,
                     ),
                   ),
                   const SizedBox(height: 12),
@@ -198,26 +199,26 @@ class CrisisManagementPage extends StatelessWidget {
                   _buildHospitalCard("University Hospital", "3.8 miles"),
 
                   // 6. When to Seek Help Section
-                  const SizedBox(height: 24),
+                  SizedBox(height: 24),
                   Container(
-                    padding: const EdgeInsets.all(20),
+                    padding: EdgeInsets.all(20),
                     decoration: BoxDecoration(
-                      color: const Color(0xFFE3F2FD), // Light blue BG
+                      color: Colors.blue.shade50,
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
-                          children: const [
-                            Icon(Icons.report_problem_outlined, color: Color(0xFF2196F3)), // Primary Blue
+                          children: [
+                            Icon(Icons.report_problem_outlined, color: Colors.blue),
                             SizedBox(width: 8),
                             Text(
                               "When to Seek Help",
                               style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
-                                color: Color(0xFF2196F3),
+                                color: Colors.blue,
                               ),
                             ),
                           ],
@@ -247,7 +248,7 @@ class CrisisManagementPage extends StatelessWidget {
     required IconData icon,
   }) {
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
@@ -263,27 +264,27 @@ class CrisisManagementPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            padding: const EdgeInsets.all(12),
+            padding: EdgeInsets.all(8),
             decoration: BoxDecoration(
-              color: const Color(0xFFE3F2FD), // Light blue circle
+              color: Colors.blue.shade50,
               shape: BoxShape.circle,
             ),
-            child: Icon(icon, color: const Color(0xFF2196F3), size: 28),
+            child: Icon(icon, color: Colors.blue, size: 24),
           ),
-           SizedBox(height: 12),
+          SizedBox(height: 8),
           Text(
             title,
-            style:  TextStyle(
+            style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 16,
+              fontSize: 14,
             ),
           ),
-         SizedBox(height: 4),
+          SizedBox(height: 4),
           Text(
             description,
             textAlign: TextAlign.center,
-            style:  TextStyle(
-              fontSize: 12,
+            style: TextStyle(
+              fontSize: 11,
               color: Colors.grey,
             ),
           ),
@@ -310,12 +311,12 @@ class CrisisManagementPage extends StatelessWidget {
       child: Row(
         children: [
           Container(
-            padding: const EdgeInsets.all(10),
-            decoration: const BoxDecoration(
-              color: Color(0xFFE3F2FD), 
+            padding: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: Colors.blue.shade50,
               shape: BoxShape.circle,
             ),
-            child:  Icon(Icons.person, color: Color(0xFF2196F3)),
+            child: Icon(Icons.person, color: Colors.blue),
           ),
           SizedBox(width: 16),
           Expanded(
@@ -324,14 +325,14 @@ class CrisisManagementPage extends StatelessWidget {
               children: [
                 Text(
                   name,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
                   ),
                 ),
                 Text(
                   role,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 14,
                     color: Colors.grey,
                   ),
@@ -342,11 +343,11 @@ class CrisisManagementPage extends StatelessWidget {
           IconButton(
             onPressed: () => _makePhoneCall(phone),
             style: IconButton.styleFrom(
-              backgroundColor: const Color(0xFF2196F3),
+              backgroundColor: Colors.blue,
               foregroundColor: Colors.white,
               padding: const EdgeInsets.all(10),
             ),
-             icon: const Icon(Icons.phone, size: 20),
+             icon: Icon(Icons.phone, size: 20),
           ),
         ],
       ),
@@ -355,8 +356,8 @@ class CrisisManagementPage extends StatelessWidget {
 
   Widget _buildHospitalCard(String name, String distance) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 12),
-      padding: const EdgeInsets.all(16),
+      margin: EdgeInsets.only(bottom: 12),
+      padding: EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12),
@@ -372,27 +373,27 @@ class CrisisManagementPage extends StatelessWidget {
         children: [
           Container(
             padding: const EdgeInsets.all(10),
-            decoration: const BoxDecoration(
-              color: Color(0xFFE8F5E9), // Light green BG
+            decoration: BoxDecoration(
+              color: Colors.green.shade50,
               shape: BoxShape.circle,
             ),
-            child: const Icon(Icons.local_hospital, color: Color(0xFF4CAF50)),
+            child: Icon(Icons.local_hospital, color: Colors.green),
           ),
-          const SizedBox(width: 16),
+          SizedBox(width: 16),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   name,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
                   ),
                 ),
                 Text(
                   distance,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 14,
                     color: Colors.grey,
                   ),
@@ -402,7 +403,7 @@ class CrisisManagementPage extends StatelessWidget {
           ),
           IconButton(
             onPressed: () => _openMap(name),
-            icon: const Icon(Icons.directions, color: Colors.grey),
+            icon: Icon(Icons.directions, color: Colors.grey),
           ),
         ],
       ),
@@ -411,19 +412,19 @@ class CrisisManagementPage extends StatelessWidget {
 
   Widget _buildHelpBullet(String text) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 8.0),
+      padding: EdgeInsets.only(bottom: 8.0),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(top: 6),
-            child: Icon(Icons.circle, size: 6, color: Color(0xFF2196F3)),
+            child: Icon(Icons.circle, size: 6, color: Colors.blue),
           ),
-          const SizedBox(width: 12),
+          SizedBox(width: 12),
           Expanded(
             child: Text(
               text,
-              style: const TextStyle(height: 1.4, fontSize: 14),
+              style: TextStyle(height: 1.4, fontSize: 14),
             ),
           ),
         ],
