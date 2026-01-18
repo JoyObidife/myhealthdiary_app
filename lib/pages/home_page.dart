@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:myhealthdiary_app/widget/selection_grid_item.dart';
 import 'package:myhealthdiary_app/widget/card_view.dart';
 import 'package:myhealthdiary_app/widget/schedule_appointment_dialog.dart';
+import 'package:myhealthdiary_app/widget/appointment_details_dialog.dart';
+import 'package:myhealthdiary_app/widget/therapy_session_dialog.dart';
+
+import 'package:myhealthdiary_app/widget/pain_crisis_log_dialog.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -23,7 +27,7 @@ class _HomePageState extends State<HomePage> {
             children: [
               Container(
                 width: double.infinity,
-                //height: 100,
+            
                 padding: EdgeInsets.all(24),
                 decoration: BoxDecoration(
                   color: Colors.blue,
@@ -54,7 +58,7 @@ class _HomePageState extends State<HomePage> {
                 "Today's Overview",
                 style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
               ),
-              //SizedBox(height: 5),
+             // SizedBox(height: 5),
               SelectionGridItem(),
 
               SizedBox(height: 18),
@@ -124,7 +128,12 @@ class _HomePageState extends State<HomePage> {
                 title: "Dr Chioma Appointment",
                  subtitle: "Today at 10:00 AM",
                 color: Colors.blue,
-                onTap: () {},
+                onTap: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) => const AppointmentDetailsDialog(),
+                  );
+                },
               ),
 
                // Therapy section
@@ -134,7 +143,12 @@ class _HomePageState extends State<HomePage> {
                 title: "Therapy Session",
                  subtitle: "Friday, feb 2",
                 color: Colors.blue,
-                onTap: () {},
+                onTap: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) => const TherapySessionDialog(),
+                  );
+                },
               ),
 
                //  Pain crisis section
@@ -144,7 +158,12 @@ class _HomePageState extends State<HomePage> {
                 title: "Pain Crisis",
                  subtitle: "Monday, Jan 28",
                 color: Colors.red,
-                onTap: () {},
+                onTap: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) => const PainCrisisLogDialog(),
+                  );
+                },
               ),
             ],
           ),
