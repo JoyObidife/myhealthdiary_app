@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myhealthdiary_app/widget/selection_grid_item.dart';
 import 'package:myhealthdiary_app/widget/card_view.dart';
+import 'package:myhealthdiary_app/widget/schedule_appointment_dialog.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -91,7 +92,12 @@ class _HomePageState extends State<HomePage> {
                 icon: Icons.event,
                 title: "Schedule Appointment",
                 color: Colors.blue,
-                onTap: () {},
+                onTap: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) => const ScheduleAppointmentDialog(),
+                  );
+                },
               ),
 
               // Crisis management section
