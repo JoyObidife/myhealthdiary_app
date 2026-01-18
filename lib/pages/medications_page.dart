@@ -70,7 +70,7 @@ class _MedicationsPageState extends State<MedicationsPage> {
                     onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const AddMedicationPage()),
+                      MaterialPageRoute(builder: (context) =>  AddMedicationPage()),
                     );
                   },
                     style: ElevatedButton.styleFrom(
@@ -120,7 +120,7 @@ class _MedicationsPageState extends State<MedicationsPage> {
                   physics: const NeverScrollableScrollPhysics(),
                   children: [
                     MedicationCard(
-                      name: "Amoxicillin",
+                      name: "Hydroxyurea",
                       dosage: "500mg Capsule",
                       remainingQuantity: "15 left",
                       quantityColor: Colors.orange,
@@ -141,14 +141,14 @@ class _MedicationsPageState extends State<MedicationsPage> {
                       onSkip: () {},
                     ),
                     MedicationCard(
-                      name: "Lisinopril",
-                      dosage: "10mg Tablet",
+                      name: "Folic Acid",
+                      dosage: "1mg Tablet",
                       remainingQuantity: "5 left",
                       quantityColor: Colors.red,
                       time: "9:00 PM",
                       frequency: "Daily",
                       onTaken: () {},
-                      onSkip: () {},
+                       onSkip: () {},
                     ),
                   ],
                 ),

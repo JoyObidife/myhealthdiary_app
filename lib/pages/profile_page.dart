@@ -13,13 +13,13 @@ class ProfilePage extends StatelessWidget {
             _buildHeader(),
             const SizedBox(height: 20),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              padding:  EdgeInsets.symmetric(horizontal: 20.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start, 
                 children: [
                   _buildProfileCard(),
-                  const SizedBox(height: 24),
-                  const Text(
+                  SizedBox(height: 24),
+                  Text(
                     "Medical Information",
                     style: TextStyle(
                       fontSize: 18,
@@ -27,10 +27,10 @@ class ProfilePage extends StatelessWidget {
                       color: Colors.black87,
                     ),
                   ),
-                  const SizedBox(height: 12),
+                  SizedBox(height: 12),
                   _buildMedicalInfoCard(),
-                  const SizedBox(height: 24),
-                  const Text(
+                  SizedBox(height: 24),
+                 Text(
                     "Emergency Contact",
                     style: TextStyle(
                       fontSize: 18,
@@ -125,7 +125,7 @@ class ProfilePage extends StatelessWidget {
               color: Colors.grey,
             ),
           ),
-          const SizedBox(height: 16),
+         SizedBox(height: 16),
           OutlinedButton.icon(
             onPressed: () {},
             style: OutlinedButton.styleFrom(
@@ -135,8 +135,8 @@ class ProfilePage extends StatelessWidget {
               side: BorderSide(color: Colors.blue.shade300),
               foregroundColor: Colors.blue,
             ),
-            icon: const Icon(Icons.edit, size: 18),
-            label: const Text("Edit Profile"),
+            icon:  Icon(Icons.edit, size: 18),
+            label:  Text("Edit Profile"),
           ),
         ],
       ),
@@ -153,11 +153,11 @@ class ProfilePage extends StatelessWidget {
           BoxShadow(
             color: Colors.black.withOpacity(0.05),
             blurRadius: 10,
-            offset: const Offset(0, 4),
+            offset: Offset(0, 4),
           ),
         ],
       ),
-      padding: const EdgeInsets.all(20),
+      padding:  EdgeInsets.all(20),
       child: Column(
         children: [
           _buildInfoRow(
@@ -181,14 +181,14 @@ class ProfilePage extends StatelessWidget {
               ),
             ),
           ),
-          const Divider(height: 24, thickness: 0.5),
+         Divider(height: 24, thickness: 0.5),
           _buildInfoRow(
             icon: Icons.bloodtype,
             iconColor: Colors.red,
             label: "Blood Type",
             value: "O+",
           ),
-          const Divider(height: 24, thickness: 0.5),
+         Divider(height: 24, thickness: 0.5),
           _buildInfoRow(
             icon: Icons.calendar_today,
             iconColor: Colors.blue,
@@ -214,7 +214,7 @@ class ProfilePage extends StatelessWidget {
           ),
         ],
       ),
-      padding: const EdgeInsets.all(20),
+      padding:  EdgeInsets.all(20),
       child: Column(
         children: [
           _buildInfoRow(
@@ -223,14 +223,14 @@ class ProfilePage extends StatelessWidget {
             label: "Name",
             value: "Dr. Chioma",
           ),
-          const Divider(height: 24, thickness: 0.5),
+           Divider(height: 24, thickness: 0.5),
           _buildInfoRow(
             icon: Icons.phone,
             iconColor: Colors.green,
             label: "Phone",
-            value: "+1 (555) 123-4567",
+            value: "+2349012345678",
           ),
-          const Divider(height: 24, thickness: 0.5),
+           Divider(height: 24, thickness: 0.5),
           _buildInfoRow(
             icon: Icons.email,
             iconColor: Colors.orange,
@@ -273,7 +273,7 @@ class ProfilePage extends StatelessWidget {
             SizedBox(height: 2),
             Text(
               value,
-              style: const TextStyle(
+              style:  TextStyle(
                 color: Colors.black87,
                 fontSize: 16,
                 fontWeight: FontWeight.w500,

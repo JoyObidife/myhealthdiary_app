@@ -99,7 +99,7 @@ class _HomePageState extends State<HomePage> {
                 onTap: () {
                   showDialog(
                     context: context,
-                    builder: (context) => const ScheduleAppointmentDialog(),
+                    builder: (context) =>  ScheduleAppointmentDialog(),
                   );
                 },
               ),
@@ -131,7 +131,7 @@ class _HomePageState extends State<HomePage> {
                 onTap: () {
                   showDialog(
                     context: context,
-                    builder: (context) => const AppointmentDetailsDialog(),
+                    builder: (context) =>  AppointmentDetailsDialog(),
                   );
                 },
               ),
@@ -146,7 +146,7 @@ class _HomePageState extends State<HomePage> {
                 onTap: () {
                   showDialog(
                     context: context,
-                    builder: (context) => const TherapySessionDialog(),
+                    builder: (context) =>  TherapySessionDialog(),
                   );
                 },
               ),
@@ -161,7 +161,7 @@ class _HomePageState extends State<HomePage> {
                 onTap: () {
                   showDialog(
                     context: context,
-                    builder: (context) => const PainCrisisLogDialog(),
+                    builder: (context) =>  PainCrisisLogDialog(),
                   );
                 },
               ),

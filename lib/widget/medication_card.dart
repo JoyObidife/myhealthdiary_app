@@ -112,7 +112,7 @@ class MedicationCard extends StatelessWidget {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 6),
+                            padding:  EdgeInsets.symmetric(horizontal: 6),
                             child: CircleAvatar(radius: 2, backgroundColor: Colors.grey.shade400),
                           ),
                           Text(
@@ -124,14 +124,14 @@ class MedicationCard extends StatelessWidget {
                             ),
                           ),
                           if (isPrn) ...[
-                            const SizedBox(width: 8),
+                             SizedBox(width: 8),
                             Container(
-                              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                              padding: EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                               decoration: BoxDecoration(
                                 border: Border.all(color: Colors.grey.shade300),
                                 borderRadius: BorderRadius.circular(4),
                               ),
-                              child: const Text(
+                              child:  Text(
                                 'PRN',
                                 style: TextStyle(fontSize: 10, color: Colors.grey),
                               ),
@@ -158,7 +158,7 @@ class MedicationCard extends StatelessWidget {
                     child: Text('Skip', style: TextStyle(color: Colors.grey.shade600)),
                   ),
                 ),
-                const SizedBox(width: 12),
+                 SizedBox(width: 12),
                 Expanded(
                   child: OutlinedButton(
                     onPressed: onTaken,
@@ -170,10 +170,10 @@ class MedicationCard extends StatelessWidget {
                         borderRadius: BorderRadius.circular(12),
                         // side: BorderSide(color: Colors.blue), // OutlinedButton handles border via side property
                       ),
-                      side: const BorderSide(color: Colors.blue),
-                      padding: const EdgeInsets.symmetric(vertical: 12),
+                      side: BorderSide(color: Colors.blue),
+                      padding:  EdgeInsets.symmetric(vertical: 12),
                     ),
-                    child: const Text('Mark Taken'),
+                    child: Text('Mark Taken'),
                   ),
                 ),
               ],
