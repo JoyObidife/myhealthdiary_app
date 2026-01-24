@@ -4,6 +4,7 @@ import 'package:myhealthdiary_app/pages/onboarding_page.dart';
 import 'package:myhealthdiary_app/pages/log_symptom_page.dart';
 import 'package:myhealthdiary_app/pages/medications_page.dart';
 import 'package:myhealthdiary_app/pages/crisis_management_page.dart';
+import 'package:myhealthdiary_app/pages/signup_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,9 +26,10 @@ class MyApp extends StatelessWidget {
       
       debugShowCheckedModeBanner: false,
       
-      initialRoute: '/',
+      initialRoute: '/signup',
       routes: {
         '/': (context) => BottomNavigation(),
+        '/signup': (context) => SignupPage(),
         '/log-symptom': (context) =>  LogSymptomPage(),
         '/medications': (context) =>  MedicationsPage(),
         '/crisis-management': (context) =>  CrisisManagementPage(),

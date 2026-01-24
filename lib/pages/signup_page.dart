@@ -42,7 +42,7 @@ class _SignupPageState extends State<SignupPage> {
 
             SizedBox(height: 30),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              padding: EdgeInsets.symmetric(horizontal: 16.0),
               child: SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
@@ -54,7 +54,7 @@ class _SignupPageState extends State<SignupPage> {
                   },
                   style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 12),
+                    padding: EdgeInsets.symmetric(horizontal: 12),
                     child: Text(
                       "Sign Up",
                       style: TextStyle(
