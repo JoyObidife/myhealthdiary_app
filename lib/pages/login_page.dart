@@ -60,7 +60,9 @@ class LoginPage extends StatelessWidget {
               child: SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/');
+                  },
                   style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
                   child: Text(
                     "Login",
@@ -77,15 +79,41 @@ class LoginPage extends StatelessWidget {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => SignupPage()),
-                    );
+                    Navigator.pushNamed(context, '/signup');
                   },
                   style: ElevatedButton.styleFrom(backgroundColor: Colors.grey[300]),
                   child: Text(
                     "Sign Up",
                     style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.black),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 16),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              child: SizedBox(
+                width: double.infinity,
+                child: OutlinedButton(
+                  onPressed: () {},
+                  style: OutlinedButton.styleFrom(
+                    side: BorderSide(color: Colors.grey),
+                    padding: EdgeInsets.symmetric(vertical: 12),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                       Image.network(
+                        "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/24px-Google_%22G%22_logo.svg.png",
+                        height: 24,
+                        width: 24,
+                      ),
+                      SizedBox(width: 10),
+                      Text(
+                        "Sign in with Google",
+                        style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.black),
+                      ),
+                    ],
                   ),
                 ),
               ),

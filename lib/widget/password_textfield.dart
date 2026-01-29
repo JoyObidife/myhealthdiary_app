@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:myhealthdiary_app/widget/custom_textfield.dart';
 
 class PasswordTextfield extends StatefulWidget {
-  const PasswordTextfield({super.key, this.controller});
+  const PasswordTextfield({super.key, this.controller, this.label = "Password"});
   final TextEditingController? controller;
+  final String label;
 
   @override
   State<PasswordTextfield> createState() => _PasswordTextfieldState();
@@ -15,7 +16,7 @@ class _PasswordTextfieldState extends State<PasswordTextfield> {
   Widget build(BuildContext context) {
     return CustomTextField(
       controller: widget.controller,
-      label: "Password",
+      label: widget.label,
       obsecureText: _hidePassword,
       suffixIcon: IconButton(
         onPressed: () {

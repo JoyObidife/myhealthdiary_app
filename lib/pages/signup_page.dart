@@ -13,6 +13,7 @@ class SignupPage extends StatefulWidget {
 class _SignupPageState extends State<SignupPage> {
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
+  var confirmPasswordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,6 +40,8 @@ class _SignupPageState extends State<SignupPage> {
             CustomTextField(label: "Email", controller: emailController),
             SizedBox(height: 16),
             PasswordTextfield(controller: passwordController),
+            SizedBox(height: 16),
+            PasswordTextfield(controller: confirmPasswordController, label: "Confirm Password"),
 
             SizedBox(height: 30),
             Padding(
@@ -47,10 +50,7 @@ class _SignupPageState extends State<SignupPage> {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => HomePage()),
-                    );
+                    Navigator.pushNamed(context, '/');
                   },
                   style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
                   child: Padding(
@@ -67,28 +67,7 @@ class _SignupPageState extends State<SignupPage> {
                 ),
               ),
             ),
-            SizedBox(height: 16),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.0),
-              child: SizedBox(
-                width: double.infinity,
-                child: OutlinedButton(
-                  onPressed: () {},
-                  style: OutlinedButton.styleFrom(
-                    side: BorderSide(color: Colors.grey),
-                    padding: EdgeInsets.symmetric(vertical: 12),
-                  ),
-                  child: Text(
-                    "Sign in with Google",
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ),
-            ),
+
           ],
         ),
       ),
