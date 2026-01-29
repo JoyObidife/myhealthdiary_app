@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "351739997316",
+    "project_id": "myhealthdiary-4e537",
+    "storage_bucket": "myhealthdiary-4e537.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:351739997316:android:91b8d473d9b0c097fae6d1",
+        "android_client_info": {
+          "package_name": "com.example.myhealthdiary_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-psSjTts6FVxcz19LQpMp9hOD6kSXhbw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
